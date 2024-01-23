@@ -1,4 +1,4 @@
-import { products } from "./products.js"
+import { products } from "./ArrProducts.js"
 const container = document.querySelector(".container")
 container.innerHTML = `
 <div class="card mb-3">

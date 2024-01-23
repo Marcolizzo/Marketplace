@@ -1,4 +1,4 @@
-import { products } from "./products.js";
+import { products } from "./ArrProducts.js";
 import { cardHtml } from "./components.js";
 
 
