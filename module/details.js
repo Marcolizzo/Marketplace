@@ -1,5 +1,5 @@
 import { detailsHtml } from "./components.js";
-import { getFetchById } from "./API.js";
+import { getFetchById } from "./fetch.js";
 
 window.addEventListener("DOMContentLoaded", init)
 async function init() {

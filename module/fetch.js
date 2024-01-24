@@ -1,4 +1,4 @@
-export { postFetch, getFetch, getFetchById }
+export { postFetch, getFetch, getFetchById, deleteProd }
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTk4MTMzZDQyNDc2YzAwMTg3NjUzYmQiLCJpYXQiOjE3MDYxMDcwOTYsImV4cCI6MTcwNzMxNjY5Nn0.ciDCplmBjKLyvjcqFPGB64Rv8u01qo_O8qbET7x8PjQ"
 const url = "https://striveschool-api.herokuapp.com/api/product/"
 
@@ -50,15 +50,31 @@ async function getFetchById(id) {
     }
 };
 
-// async function deleteProd() {
-//   try{
-//     const resp = await fetch(url + "65b1283f913f650018d090c9", {
-//       method: 'DELETE',
-//       headers: {
-//         Authorization: `Bearer ${token}`
-//       }
-//     })
-//   } catch (err){
-//     console.error(err)
-//   }
-// }
+async function deleteProd(id) {
+  try{
+    const resp = await fetch(url + id, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+  } catch (err){
+    console.error(err)
+  }
+};
+
+// async function updateProd(id) {
+//     try {
+//         const response = await fetch(url + id, {
+//             method: 'PUT',
+//             body: JSON.stringify(),
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'Authorization': `Bearer ${token}`
+//             }
+//         })
+//     } catch (err) {
+//         console.log("Error:" + err)
+//         alert(err)
+//     }
+// };
