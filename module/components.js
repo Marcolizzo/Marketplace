@@ -58,7 +58,7 @@ function backofficeHtml(product) {
         <p class="card-text">${product.brand}</p>
         <p class="card-text">${product.price}$</p>
         <button class="btn btn-danger btnDelete">Detele</button>
-        <button class="btn btn-primary btnUpdate">Update</button>
+        <button class="btn btn-primary btnEdit">Edit</button>
       </div>
     </div>
   </div>

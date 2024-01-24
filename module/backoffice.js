@@ -1,6 +1,6 @@
 import { postFetch } from "./fetch.js";
 import { backofficeHtml } from "./components.js";
-import { getFetch, deleteProd} from "./fetch.js";
+import { getFetch, getFetchById, updateProd, deleteProd } from "./fetch.js";
 
 window.addEventListener("DOMContentLoaded", init)
 async function init() {
@@ -11,6 +11,8 @@ async function init() {
     });
     eventHandler()
 }
+
+
 
 function eventHandler() {
     // Add Product
@@ -23,20 +25,23 @@ function eventHandler() {
 
     // Delete Product
     const btnDelete = document.querySelectorAll(".btnDelete")
-    btnDelete.forEach((btn)=>{
-        btn.addEventListener("click", (ev)=>{
-           const id = ev.target.closest(".card").id
-           deleteProd(id)
+    btnDelete.forEach((btn) => {
+        btn.addEventListener("click", (ev) => {
+            const id = ev.target.closest(".card").id
+            deleteProd(id)
         })
     })
 
-    // Update Product
-    const btnUpdate = document.querySelectorAll(".btnUpdate")
-    btnUpdate.forEach((btn)=>{
-        btn.addEventListener("click", (ev)=>{
-            
+    // Edit Product
+    const btnEdit = document.querySelectorAll(".btnEdit")
+    btnEdit.forEach((btn) => {
+        btn.addEventListener("click", (ev) => {
+            const id = ev.target.closest(".card").id
+            editProduct(id)
         })
     })
+
+
 }
 
 function createProduct() {
@@ -55,4 +60,37 @@ function createProduct() {
         price: prodPrice
     };
     return product
+}
+
+async function editProduct(id) {
+    let product = await getFetchById(id)
+    let modalName = document.getElementById("modal-name")
+    let modalDescription = document.getElementById("modal-description")
+    let modalBrand = document.getElementById("modal-brand")
+    let modalImageUrl = document.getElementById("modal-imageUrl")
+    let modalPrice = document.getElementById("modal-price")
+
+    modalName.value = product.name
+    modalDescription.value = product.description
+    modalBrand.value = product.brand
+    modalImageUrl.value = product.imageUrl
+    modalPrice.value = product.price
+
+    const modalElement = document.getElementById("modal")
+    const modal = new bootstrap.Modal(modalElement)
+    modal.show()
+
+
+    const btnUpdate = document.getElementById("btnUpdate")
+    btnUpdate.addEventListener("click", () => {
+        const editedProduct = {
+            name: modalName.value,
+            description: modalDescription.value,
+            brand: modalBrand.value,
+            imageUrl: modalImageUrl.value,
+            price: modalPrice.value
+        };
+        updateProd(id, editedProduct)
+        modal.hide()
+    })
 }
