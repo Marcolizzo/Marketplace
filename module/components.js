@@ -9,11 +9,11 @@ function cardHtml (product) {
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">${product.title}</h5>
+        <h5 class="card-title">${product.name}</h5>
         <p class="card-text">${product.description}</p>
         <p class="card-text">${product.brand}</p>
         <p class="card-text">${product.price}</p>
-        <a href="#" class="btn btn-primary">Details</a>
+        <a href="#" class="btn btn-primary" onclick="showDetails(ev)">Details</a>
       </div>
     </div>
   </div>
