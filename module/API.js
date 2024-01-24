@@ -33,3 +33,16 @@ async function getFetch() {
         alert(err)
     }
 };
+
+// async function deleteProd() {
+//   try{
+//     const resp = await fetch(url + "65b1283f913f650018d090c9", {
+//       method: 'DELETE',
+//       headers: {
+//         Authorization: `Bearer ${token}`
+//       }
+//     })
+//   } catch (err){
+//     console.error(err)
+//   }
+// }

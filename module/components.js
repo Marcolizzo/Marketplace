@@ -12,7 +12,7 @@ function cardHtml (product) {
         <h5 class="card-title">${product.name}</h5>
         <p class="card-text">${product.description}</p>
         <p class="card-text">${product.brand}</p>
-        <p class="card-text">${product.price}</p>
+        <p class="card-text">${product.price}$</p>
         <a href="#" class="btn btn-primary" onclick="showDetails(ev)">Details</a>
       </div>
     </div>
