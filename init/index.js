@@ -1,6 +1,6 @@
 // import { products } from "./ArrProducts.js";
-import { displayProducts } from "./helper.js";
-import { postFetch, getFetch } from "./fetch.js";
+import { displayProducts } from "../module/helper.js";
+import { postFetch, getFetch } from "../module/fetch.js";
 
 window.addEventListener("DOMContentLoaded", init)
 async function init() {
