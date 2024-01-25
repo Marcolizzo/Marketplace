@@ -1,5 +1,6 @@
 import { getFetch } from "../module/fetch.js";
 import { eventHandler } from "../module/helper.js";
+import { backofficeHtml } from "../module/components.js";
 
 window.addEventListener("DOMContentLoaded", init)
 async function init() {

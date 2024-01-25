@@ -1,6 +1,6 @@
 import { cardHtml, backofficeHtml } from "./components.js";
 import { getFetch, getFetchById, postFetch, updateProd, deleteProd } from "./fetch.js";
-export { displayProducts,eventHandler }
+export { displayProducts, eventHandler }
 
 // Index.js
 function displayProducts(products) {
@@ -13,12 +13,12 @@ function displayProducts(products) {
 // backoffice.js
 function eventHandler() {
     // Add Product
-    const addProduct = document.getElementById("addProduct")
+    const addProduct = document.getElementById("addProduct");
     addProduct.addEventListener("click", () => {
         const product = createProduct()
         postFetch(product)
         createNewList()
-    })
+    });
 
     // Delete Product
     const btnDelete = document.querySelectorAll(".btnDelete")
@@ -40,6 +40,7 @@ function eventHandler() {
     })
 }
 
+
 function createProduct() {
     let prodName = document.getElementById("input-name").value
     const prodDescription = document.getElementById("input-description").value
@@ -47,6 +48,7 @@ function createProduct() {
     const prodImageUrl = document.getElementById("input-imageUrl").value
     const priceString = document.getElementById("input-price").value
     const prodPrice = parseFloat(priceString).toFixed(2)
+
 
     const product = {
         name: prodName,

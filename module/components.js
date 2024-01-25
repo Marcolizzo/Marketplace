@@ -35,7 +35,6 @@ function detailsHtml(product) {
         <p class="card-text">${product.description}</p>
         <p class="card-text">${product.brand}</p>
         <p class="card-text">${product.price}</p>
-        <a href="#" class="btn btn-primary">Details</a>
       </div>
     </div>
   </div>
