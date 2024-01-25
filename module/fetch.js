@@ -51,16 +51,16 @@ async function getFetchById(id) {
 };
 
 async function deleteProd(id) {
-  try{
-    const resp = await fetch(url + id, {
-      method: 'DELETE',
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-  } catch (err){
-    console.error(err)
-  }
+    try {
+        const resp = await fetch(url + id, {
+            method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+    } catch (err) {
+        console.error(err)
+    }
 };
 
 async function updateProd(id, product) {

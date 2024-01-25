@@ -7,7 +7,3 @@ function displayProducts(products) {
         container.innerHTML += cardHtml(product)
     })
 }
-
-function showDetails() {
-
-}

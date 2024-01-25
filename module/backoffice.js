@@ -2,25 +2,24 @@ import { postFetch } from "./fetch.js";
 import { backofficeHtml } from "./components.js";
 import { getFetch, getFetchById, updateProd, deleteProd } from "./fetch.js";
 
+
 window.addEventListener("DOMContentLoaded", init)
 async function init() {
     let products = await getFetch()
-    const container = document.querySelector(".container")
+    const list = document.querySelector(".list")
     products.forEach(product => {
-        container.innerHTML += backofficeHtml(product)
+        list.innerHTML += backofficeHtml(product)
     });
     eventHandler()
 }
-
-
 
 function eventHandler() {
     // Add Product
     const addProduct = document.getElementById("addProduct")
     addProduct.addEventListener("click", () => {
         const product = createProduct()
-        console.log(product)
         postFetch(product)
+        createNewList()
     })
 
     // Delete Product
@@ -29,6 +28,7 @@ function eventHandler() {
         btn.addEventListener("click", (ev) => {
             const id = ev.target.closest(".card").id
             deleteProd(id)
+            createNewList()
         })
     })
 
@@ -40,8 +40,6 @@ function eventHandler() {
             editProduct(id)
         })
     })
-
-
 }
 
 function createProduct() {
@@ -76,13 +74,13 @@ async function editProduct(id) {
     modalImageUrl.value = product.imageUrl
     modalPrice.value = product.price
 
-    const modalElement = document.getElementById("modal")
-    const modal = new bootstrap.Modal(modalElement)
-    modal.show()
+    // const modalElement = document.getElementById("modal")
+    // const modal = new bootstrap.Modal(modalElement)
+    // modal.show()
 
 
     const btnUpdate = document.getElementById("btnUpdate")
-    btnUpdate.addEventListener("click", () => {
+    btnUpdate.addEventListener("click", async () => {
         const editedProduct = {
             name: modalName.value,
             description: modalDescription.value,
@@ -91,6 +89,16 @@ async function editProduct(id) {
             price: modalPrice.value
         };
         updateProd(id, editedProduct)
-        modal.hide()
+        // modal.hide()
+        createNewList()
     })
+}
+
+async function createNewList() {
+    let products = await getFetch()
+    const list = document.querySelector(".list")
+    list.innerHTML = ""
+    products.forEach(product => {
+        list.innerHTML += backofficeHtml(product)
+    });
 }

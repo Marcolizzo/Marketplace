@@ -1,4 +1,4 @@
-export { cardHtml, detailsHtml, backofficeHtml}
+export { cardHtml, detailsHtml, backofficeHtml }
 
 function cardHtml(product) {
   let card = `
@@ -58,11 +58,11 @@ function backofficeHtml(product) {
         <p class="card-text">${product.brand}</p>
         <p class="card-text">${product.price}$</p>
         <button class="btn btn-danger btnDelete">Detele</button>
-        <button class="btn btn-primary btnEdit">Edit</button>
+        <button class="btn btn-primary btnEdit" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
       </div>
     </div>
   </div>
 </div>`
 
-return card
+  return card
 };

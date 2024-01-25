@@ -10,5 +10,5 @@ async function init() {
 
 // TO DO
 // Pagina details funzionante x
-// Backoffice (aggiungere, modificare ed eliminare prodotti)
+// Backoffice (aggiungere, modificare ed eliminare prodotti) x
 // barra search funzionante
