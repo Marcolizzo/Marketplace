@@ -138,7 +138,7 @@ export const createForm = () => {
     inputName.className = 'form-control'
     inputName.type = 'text'
     inputName.placeholder = 'Name'
-    inputName.ariaLabel  = 'Name'
+    inputName.ariaLabel = 'Name'
     inputName.setAttribute('aria-describedby', 'addon-wrapping')
     inputGroupName.appendChild(inputName)
     // DESCRIPTION
@@ -155,7 +155,7 @@ export const createForm = () => {
     const inputDescription = document.createElement('textarea')
     inputDescription.className = 'form-control'
     inputDescription.placeholder = 'Description'
-    inputDescription.ariaLabel  = 'Description'
+    inputDescription.ariaLabel = 'Description'
     inputDescription.setAttribute('aria-describedby', 'addon-wrapping')
     inputGroupDescription.appendChild(inputDescription)
 
@@ -174,7 +174,7 @@ export const createForm = () => {
     inputBrand.className = 'form-control'
     inputBrand.type = 'text'
     inputBrand.placeholder = 'Brand'
-    inputBrand.ariaLabel  = 'Brand'
+    inputBrand.ariaLabel = 'Brand'
     inputBrand.setAttribute('aria-describedby', 'addon-wrapping')
     inputGroupBrand.appendChild(inputBrand)
 
@@ -193,7 +193,7 @@ export const createForm = () => {
     inputImageUrl.className = 'form-control'
     inputImageUrl.type = 'text'
     inputImageUrl.placeholder = 'Image URL'
-    inputImageUrl.ariaLabel  = 'Image URL'
+    inputImageUrl.ariaLabel = 'Image URL'
     inputImageUrl.setAttribute('aria-describedby', 'addon-wrapping')
     inputGroupImageUrl.appendChild(inputImageUrl)
 
@@ -212,7 +212,7 @@ export const createForm = () => {
     inputPrice.className = 'form-control'
     inputPrice.type = 'number'
     inputPrice.placeholder = 'Price'
-    inputPrice.ariaLabel  = 'Price'
+    inputPrice.ariaLabel = 'Price'
     inputPrice.setAttribute('aria-describedby', 'addon-wrapping')
     inputGroupPrice.appendChild(inputPrice)
     // END INPUTS
@@ -231,10 +231,6 @@ export const createBtnAddProduct = () => {
     btnAddProduct.disabled = true
 
     formContainer.appendChild(btnAddProduct)
-
-    btnAddProduct.onclick = () => {
-        // addNewProduct(product)
-    }
 }
 
 export const createBtnEdit = (product) => {
@@ -330,7 +326,7 @@ export const createModal = (product) => {
     inputName.className = 'form-control'
     inputName.type = 'text'
     inputName.placeholder = 'Name'
-    inputName.ariaLabel  = 'Name'
+    inputName.ariaLabel = 'Name'
     inputName.setAttribute('aria-describedby', 'addon-wrapping')
     inputGroupName.appendChild(inputName)
     inputName.value = product.name
@@ -348,7 +344,7 @@ export const createModal = (product) => {
     const inputDescription = document.createElement('textarea')
     inputDescription.className = 'form-control'
     inputDescription.placeholder = 'Description'
-    inputDescription.ariaLabel  = 'Description'
+    inputDescription.ariaLabel = 'Description'
     inputDescription.setAttribute('aria-describedby', 'addon-wrapping')
     inputGroupDescription.appendChild(inputDescription)
     inputDescription.value = product.description
@@ -368,7 +364,7 @@ export const createModal = (product) => {
     inputBrand.className = 'form-control'
     inputBrand.type = 'text'
     inputBrand.placeholder = 'Brand'
-    inputBrand.ariaLabel  = 'Brand'
+    inputBrand.ariaLabel = 'Brand'
     inputBrand.setAttribute('aria-describedby', 'addon-wrapping')
     inputGroupBrand.appendChild(inputBrand)
     inputBrand.value = product.brand
@@ -388,7 +384,7 @@ export const createModal = (product) => {
     inputImageUrl.className = 'form-control'
     inputImageUrl.type = 'text'
     inputImageUrl.placeholder = 'Image URL'
-    inputImageUrl.ariaLabel  = 'Image URL'
+    inputImageUrl.ariaLabel = 'Image URL'
     inputImageUrl.setAttribute('aria-describedby', 'addon-wrapping')
     inputGroupImageUrl.appendChild(inputImageUrl)
     inputImageUrl.value = product.imageUrl
@@ -408,7 +404,7 @@ export const createModal = (product) => {
     inputPrice.className = 'form-control'
     inputPrice.type = 'number'
     inputPrice.placeholder = 'Price'
-    inputPrice.ariaLabel  = 'Price'
+    inputPrice.ariaLabel = 'Price'
     inputPrice.setAttribute('aria-describedby', 'addon-wrapping')
     inputGroupPrice.appendChild(inputPrice)
     inputPrice.value = product.price
