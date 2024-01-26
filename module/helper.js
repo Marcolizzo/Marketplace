@@ -13,3 +13,20 @@ export function dispalyCardsBackoffice(products) {
         createBtnDelete(product)
     });
 }
+
+export function searchProduct() {
+    const inputSearch = document.getElementById('inputSearch')
+    const cards = document.querySelectorAll('.card')
+    console.log(inputSearch.value)
+    cards.forEach((card) => {
+        const title = card.querySelector('.card-title').innerText.toLowerCase()
+        const brand = card.querySelector('.brand').innerText.toLowerCase()
+        console.log(brand)
+        if ((title.includes(inputSearch.value)) || (brand.includes(inputSearch.value))) {
+            card.style.display = 'block'
+        } else {
+            card.style.display = 'none'
+        }
+    })
+    inputSearch.value = ''
+}

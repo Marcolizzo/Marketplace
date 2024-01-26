@@ -1,4 +1,5 @@
 import { deleteProd } from "./fetch.js";
+import { searchProduct } from "./helper.js";
 
 export const createNavbar = () => {
     const navbar = document.createElement('nav');
@@ -39,6 +40,7 @@ export const createSearchbar = () => {
 
     const inputSearch = document.createElement('input')
     inputSearch.className = 'form-control me-2'
+    inputSearch.id = 'inputSearch'
     inputSearch.type = 'search'
     inputSearch.placeholder = 'Search'
     inputSearch.ariaLabel = 'Search'
@@ -46,9 +48,13 @@ export const createSearchbar = () => {
 
     const btnSearch = document.createElement('button')
     btnSearch.className = 'btn btn-outline-success'
-    btnSearch.type = 'submit'
+    btnSearch.type = 'button'
     btnSearch.textContent = 'Search'
     form.appendChild(btnSearch)
+
+    btnSearch.onclick = () => {
+        searchProduct()
+    }
 }
 
 export const createCard = (product) => {
@@ -89,13 +95,13 @@ export const createCard = (product) => {
     cardBody.appendChild(description)
 
     const brand = document.createElement('p')
-    brand.className = 'card-text'
+    brand.className = 'card-text brand'
     brand.textContent = product.brand
     cardBody.appendChild(brand)
 
     const price = document.createElement('p')
     price.className = 'card-text'
-    price.textContent = product.price + '$'
+    price.textContent = product.price.toFixed(2) + '$'
     cardBody.appendChild(price)
 
     const container = document.querySelector(".container")
