@@ -49,7 +49,7 @@ export async function postFetch(product) {
     }
 };
 
-export async function updateProd(id, product) {
+export async function editFetch(id, product) {
     try {
         const response = await fetch(url + id, {
             method: 'PUT',

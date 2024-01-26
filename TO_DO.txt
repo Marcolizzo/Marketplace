@@ -3,4 +3,5 @@ INDEX:
 DETAILS:
     EXTRA: abbellire la card
 BACKOFFICE:
-    - Funzione che, cliccando sul tasto "Confirm" del modale, recupera i dati dal modale e modifica il prodotto con quei dati
+    - BUG: Se nel form vengono compilati tutti i campi e poi cancellati (quindi di nuovo input vuoti), il bottone
+            "Add new Product" resta attivo.

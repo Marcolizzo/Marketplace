@@ -1,4 +1,4 @@
-import { searchProduct, checkIfInputsAreEmpty, deleteProd } from "./helper.js";
+import { searchProduct, checkIfInputsAreEmpty, deleteProd, editProduct } from "./helper.js";
 
 export const createNavbar = () => {
     const navbar = document.createElement('nav');
@@ -427,7 +427,9 @@ export const createModal = (product) => {
     btnConfirm.textContent = 'Confirm'
     modalFooter.appendChild(btnConfirm)
 
-    // btnConfirm.onclick = () => editProduct(product)
+    btnConfirm.onclick = () => {
+        editProduct(inputName, inputDescription, inputBrand, inputImageUrl, inputPrice, product._id)
+    }
 
     modalContainer.appendChild(modalDiv)
 }
