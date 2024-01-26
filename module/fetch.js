@@ -32,3 +32,48 @@ export async function getFetchById(id) {
         alert(err)
     }
 };
+
+export async function postFetch(product) {
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(product),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+    } catch (err) {
+        console.log("Error:" + err)
+        alert(err)
+    }
+};
+
+export async function updateProd(id, product) {
+    try {
+        const response = await fetch(url + id, {
+            method: 'PUT',
+            body: JSON.stringify(product),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+    } catch (err) {
+        console.log("Error:" + err)
+        alert(err)
+    }
+};
+
+export async function deleteProd(id) {
+    try {
+        const resp = await fetch(url + id, {
+            method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+    } catch (err) {
+        console.error(err)
+    }
+};
