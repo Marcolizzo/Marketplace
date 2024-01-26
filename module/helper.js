@@ -30,3 +30,25 @@ export function searchProduct() {
     })
     inputSearch.value = ''
 }
+
+export function checkIfInputsAreEmpty(name, description, brand, imageUrl, price) {
+    const inputs = [name, description, brand, imageUrl, price]
+    inputs.forEach((input) => {
+        input.addEventListener("keyup" , () => {
+            if (
+                (name.value !== "") && 
+                (description.value !== "") && 
+                (brand.value !== "") && 
+                (imageUrl.value !== "") && 
+                (price.value !== "")
+                ) {
+                activateBtn()
+            }
+        })
+    })
+}
+
+export function activateBtn() {
+    const btnAddNewProduct = document.getElementById('addNewProduct')
+    btnAddNewProduct.disabled = false
+}

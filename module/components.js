@@ -1,5 +1,5 @@
 import { deleteProd } from "./fetch.js";
-import { searchProduct } from "./helper.js";
+import { searchProduct, checkIfInputsAreEmpty } from "./helper.js";
 
 export const createNavbar = () => {
     const navbar = document.createElement('nav');
@@ -104,8 +104,8 @@ export const createCard = (product) => {
     price.textContent = product.price.toFixed(2) + '$'
     cardBody.appendChild(price)
 
-    const container = document.querySelector(".container")
-    container.appendChild(card)
+    const prodContainer = document.querySelector(".prod-container")
+    prodContainer.appendChild(card)
 }
 
 export const createBtnDetails = (product) => {
@@ -121,12 +121,12 @@ export const createBtnDetails = (product) => {
 }
 
 export const createForm = () => {
-    const container = document.querySelector(".container") 
+    const formContainer = document.querySelector(".form-container")
     // INPUTS
     // NAME
     const inputGroupName = document.createElement('div')
     inputGroupName.className = 'input-group'
-    container.appendChild(inputGroupName)
+    formContainer.appendChild(inputGroupName)
 
     const spanName = document.createElement('span')
     spanName.className = 'input-group-text'
@@ -144,7 +144,7 @@ export const createForm = () => {
     // DESCRIPTION
     const inputGroupDescription = document.createElement('div')
     inputGroupDescription.className = 'input-group'
-    container.appendChild(inputGroupDescription)
+    formContainer.appendChild(inputGroupDescription)
 
     const spanDescription = document.createElement('span')
     spanDescription.className = 'input-group-text'
@@ -162,7 +162,7 @@ export const createForm = () => {
     // BRAND
     const inputGroupBrand = document.createElement('div')
     inputGroupBrand.className = 'input-group'
-    container.appendChild(inputGroupBrand)
+    formContainer.appendChild(inputGroupBrand)
 
     const spanBrand = document.createElement('span')
     spanBrand.className = 'input-group-text'
@@ -181,7 +181,7 @@ export const createForm = () => {
     // URL IMAGE
     const inputGroupImageUrl = document.createElement('div')
     inputGroupImageUrl.className = 'input-group'
-    container.appendChild(inputGroupImageUrl)
+    formContainer.appendChild(inputGroupImageUrl)
 
     const spanImageUrl = document.createElement('span')
     spanImageUrl.className = 'input-group-text'
@@ -200,7 +200,7 @@ export const createForm = () => {
     // PRICE
     const inputGroupPrice = document.createElement('div')
     inputGroupPrice.className = 'input-group'
-    container.appendChild(inputGroupPrice)
+    formContainer.appendChild(inputGroupPrice)
 
     const spanPrice = document.createElement('span')
     spanPrice.className = 'input-group-text'
@@ -216,18 +216,21 @@ export const createForm = () => {
     inputPrice.setAttribute('aria-describedby', 'addon-wrapping')
     inputGroupPrice.appendChild(inputPrice)
     // END INPUTS
+
+    checkIfInputsAreEmpty(inputName, inputDescription, inputBrand, inputImageUrl, inputPrice)
 }
 
 export const createBtnAddProduct = () => {
-    const container = document.querySelector(".container")
+    const formContainer = document.querySelector(".form-container")
     const btnAddProduct = document.createElement('button')
     btnAddProduct.type = 'button'
     btnAddProduct.className = 'btn btn-success mb-5'
+    btnAddProduct.id = 'addNewProduct'
     btnAddProduct.textContent = 'Add new Product'
     btnAddProduct.style = 'width: 180px'
     btnAddProduct.disabled = true
 
-    container.appendChild(btnAddProduct)
+    formContainer.appendChild(btnAddProduct)
 
     btnAddProduct.onclick = () => {
         // addNewProduct(product)
