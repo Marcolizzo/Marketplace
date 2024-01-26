@@ -3,7 +3,4 @@ INDEX:
 DETAILS:
     EXTRA: abbellire la card
 BACKOFFICE:
-    - Funzione che abilita il bottone "Add new Product" quando tutti i campi sono stati compilati
-    - Funzione che, al click di "Add new Product", aggiunge un prodotto, aggiorna la lista e svuota gli input (EXTRA: il prodotto viene messo in cima alla lista)
-    - Funzione che, cliccando sul bottone "Delete", elimina un prodotto e aggiorna la lista
     - Funzione che, cliccando sul tasto "Confirm" del modale, recupera i dati dal modale e modifica il prodotto con quei dati

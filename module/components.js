@@ -1,5 +1,4 @@
-import { deleteProd } from "./fetch.js";
-import { searchProduct, checkIfInputsAreEmpty } from "./helper.js";
+import { searchProduct, checkIfInputsAreEmpty, deleteProd } from "./helper.js";
 
 export const createNavbar = () => {
     const navbar = document.createElement('nav');
@@ -262,7 +261,7 @@ export const createBtnDelete = (product) => {
     })
 
     btnDelete.onclick = () => {
-        // deleteProd(product._id)
+        deleteProd(product._id)
     }
 }
 
@@ -407,7 +406,7 @@ export const createModal = (product) => {
     inputPrice.ariaLabel = 'Price'
     inputPrice.setAttribute('aria-describedby', 'addon-wrapping')
     inputGroupPrice.appendChild(inputPrice)
-    inputPrice.value = product.price
+    inputPrice.value = product.price.toFixed(2)
     // END INPUTS
 
     const modalFooter = document.createElement('div')

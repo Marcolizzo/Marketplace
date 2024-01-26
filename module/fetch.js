@@ -65,7 +65,7 @@ export async function updateProd(id, product) {
     }
 };
 
-export async function deleteProd(id) {
+export async function deleteFetch(id) {
     try {
         const resp = await fetch(url + id, {
             method: 'DELETE',

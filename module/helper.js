@@ -1,5 +1,5 @@
 import { createCard, createBtnDetails, createBtnEdit, createBtnDelete } from "./components.js";
-import { getFetch, postFetch } from "./fetch.js";
+import { getFetch, postFetch, deleteFetch } from "./fetch.js";
 
 export function dispalyCardsIndex(products) {
     products.forEach(product => {
@@ -73,8 +73,16 @@ export async function addNewProduct(NewName, NewDescription, NewBrand, NewImageU
         price: NewPrice.value
     }
 
-    postFetch(product)
+    const btnAddNewProduct = document.getElementById('addNewProduct')
+    btnAddNewProduct.disabled = true
+
+    await postFetch(product)
     let products = await getFetch()
     dispalyCardsBackoffice(products)
+}
 
+export async function deleteProd(id) {
+    await deleteFetch(id)
+    let products = await getFetch()
+    dispalyCardsBackoffice(products)
 }
