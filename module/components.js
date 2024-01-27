@@ -47,11 +47,12 @@ export const createSearchbar = () => {
 
     const btnSearch = document.createElement('button')
     btnSearch.className = 'btn btn-outline-success'
-    btnSearch.type = 'button'
+    btnSearch.type = 'submit'
     btnSearch.textContent = 'Search'
     form.appendChild(btnSearch)
 
-    btnSearch.onclick = () => {
+    form.onsubmit = (event) => {
+        event.preventDefault()
         searchProduct()
     }
 }
