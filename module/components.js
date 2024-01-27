@@ -1,5 +1,6 @@
 import { searchProduct, checkIfInputsAreEmpty, deleteProd, editProduct } from "./helper.js";
 
+// function to create the navbar 
 export const createNavbar = () => {
     const navbar = document.createElement('nav');
     navbar.className = 'navbar bg-dark border-bottom border-body';
@@ -29,6 +30,7 @@ export const createNavbar = () => {
     navbarContainer.appendChild(navbar);
 }
 
+// Function to create the searchbar
 export const createSearchbar = () => {
     const containerFluid = document.querySelector('.container-fluid')
 
@@ -57,6 +59,7 @@ export const createSearchbar = () => {
     }
 }
 
+// Function to create the product card
 export const createCard = (product) => {
     const card = document.createElement('div')
     card.className = 'card mb-3 p-3 mb-5 rounded'
@@ -109,6 +112,7 @@ export const createCard = (product) => {
     prodContainer.appendChild(card)
 }
 
+// Function to create the "Details" button
 export const createBtnDetails = (product) => {
     const cardBody = document.querySelectorAll(".card-body")
     const btnDetails = document.createElement('a')
@@ -121,6 +125,7 @@ export const createBtnDetails = (product) => {
     })
 }
 
+// Function to create the form with inputs
 export const createForm = () => {
     const formContainer = document.querySelector(".form-container")
     // INPUTS
@@ -221,6 +226,7 @@ export const createForm = () => {
     checkIfInputsAreEmpty(inputName, inputDescription, inputBrand, inputImageUrl, inputPrice)
 }
 
+// Function to create the "Add new Product" button
 export const createBtnAddProduct = () => {
     const formContainer = document.querySelector(".form-container")
     const btnAddProduct = document.createElement('button')
@@ -234,6 +240,7 @@ export const createBtnAddProduct = () => {
     formContainer.appendChild(btnAddProduct)
 }
 
+// Function to create the "Edit" button
 export const createBtnEdit = (product) => {
     const cardBody = document.querySelectorAll(".card-body")
     const btnEdit = document.createElement('button')
@@ -252,6 +259,7 @@ export const createBtnEdit = (product) => {
     }
 }
 
+// Function to create the "Delete" button
 export const createBtnDelete = (product) => {
     const cardBody = document.querySelectorAll(".card-body")
     const btnDelete = document.createElement('button')
@@ -267,6 +275,7 @@ export const createBtnDelete = (product) => {
     }
 }
 
+// Function to create the modal
 export const createModal = (product) => {
     const modalContainer = document.querySelector('.modal-container')
     modalContainer.innerHTML = ''
@@ -311,7 +320,7 @@ export const createModal = (product) => {
     modalBody.className = 'modal-body d-flex flex-column gap-2'
     modalContent.appendChild(modalBody)
 
-    // INPUTS
+    // Create INPUTS
     // NAME
     const inputGroupName = document.createElement('div')
     inputGroupName.className = 'input-group'
