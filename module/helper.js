@@ -38,30 +38,40 @@ export function checkIfInputsAreEmpty(name, description, brand, imageUrl, price)
     const inputs = [name, description, brand, imageUrl, price]
     inputs.forEach((input) => {
         input.addEventListener("keyup", () => {
-            if (
-                (name.value !== "") &&
-                (description.value !== "") &&
-                (brand.value !== "") &&
-                (imageUrl.value !== "") &&
-                (price.value !== "")
-            ) {
-                activateBtn(name, description, brand, imageUrl, price)
+            const areInputsEmpty = inputs.some(input => input.value === "");
+            if (!areInputsEmpty) {
+                activateBtn(name, description, brand, imageUrl, price);
+            } else {
+                disableBtn()
             }
         })
     })
 }
 
 export function activateBtn(name, description, brand, imageUrl, price) {
-    const btnAddNewProduct = document.getElementById('addNewProduct')
-    btnAddNewProduct.disabled = false
+    const btnAddNewProduct = document.getElementById('addNewProduct');
+    const inputs = [name, description, brand, imageUrl, price];
 
-    btnAddNewProduct.onclick = () => {
-        addNewProduct(name, description, brand, imageUrl, price)
-        const inputs = [name, description, brand, imageUrl, price]
-        inputs.forEach((input) => {
-            input.value = ""
-        })
+    const areInputsEmpty = inputs.some(input => input.value === "");
+    btnAddNewProduct.disabled = areInputsEmpty;
+
+    if (!areInputsEmpty) {
+        btnAddNewProduct.onclick = () => {
+            addNewProduct(name, description, brand, imageUrl, price);
+            inputs.forEach((input) => {
+                input.value = ""
+            });
+            disableBtn();
+        }
+    } else {
+        btnAddNewProduct.onclick = null;
     }
+};
+
+function disableBtn() {
+    const btnAddNewProduct = document.getElementById('addNewProduct');
+    btnAddNewProduct.disabled = true
+    btnAddNewProduct.onclick = null
 }
 
 export async function addNewProduct(NewName, NewDescription, NewBrand, NewImageUrl, NewPrice) {
