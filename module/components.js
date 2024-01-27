@@ -46,7 +46,7 @@ export const createSearchbar = () => {
     form.appendChild(inputSearch)
 
     const btnSearch = document.createElement('button')
-    btnSearch.className = 'btn btn-outline-success'
+    btnSearch.className = 'btn btn-outline-primary'
     btnSearch.type = 'submit'
     btnSearch.textContent = 'Search'
     form.appendChild(btnSearch)
@@ -59,7 +59,8 @@ export const createSearchbar = () => {
 
 export const createCard = (product) => {
     const card = document.createElement('div')
-    card.className = 'card mb-3'
+    card.className = 'card mb-3 p-3 mb-5 rounded'
+    card.style.boxShadow = '0 0 30px blue';
 
     const row = document.createElement('div')
     row.className = 'row g-0'
@@ -70,7 +71,7 @@ export const createCard = (product) => {
     row.appendChild(colImg)
 
     const img = document.createElement('img')
-    img.className = 'img-fluid rounded-start'
+    img.className = 'img-fluid rounded'
     img.src = product.imageUrl
     img.alt = product.className
     img.style = 'max-height: 18rem;'
@@ -100,7 +101,7 @@ export const createCard = (product) => {
     cardBody.appendChild(brand)
 
     const price = document.createElement('p')
-    price.className = 'card-text'
+    price.className = 'card-text fs-4 fw-semibold'
     price.textContent = product.price.toFixed(2) + '$'
     cardBody.appendChild(price)
 
