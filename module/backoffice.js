@@ -1,5 +1,5 @@
 import { createNavbar, createForm, createBtnAddProduct } from "./components.js";
-import { dispalyCardsBackoffice, activateBtn } from "./helper.js";
+import { dispalyCardsBackoffice } from "./helper.js";
 import { getFetch } from "./fetch.js";
 
 // Backoffice page initialization

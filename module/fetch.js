@@ -17,22 +17,6 @@ export async function getFetch() {
     }
 };
 
-export async function getFetchById(id) {
-    try {
-        const response = await fetch(url + id, {
-            method: 'GET',
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
-        })
-        const data = await response.json()
-        return data;
-    } catch (err) {
-        console.log("Error:" + err)
-        alert(err)
-    }
-};
-
 export async function postFetch(product) {
     try {
         const response = await fetch(url, {
