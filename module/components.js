@@ -292,7 +292,7 @@ export const createModal = (product) => {
     )
 
     const modalDialog = document.createElement('div')
-    modalDialog.className = 'modal-dialog modal-dialog-centered'
+    modalDialog.className = 'modal-dialog'
     modalDiv.appendChild(modalDialog)
 
     const modalContent = document.createElement('div')
